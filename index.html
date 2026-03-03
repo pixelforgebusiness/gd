@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Geometry Dash — Clone</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="ui-root">
+    <header class="menu">
+      <h1 id="title">GEOMETRY DASH — CLONE</h1>
+      <div class="menu-buttons">
+        <button id="btn-play" class="btn">Play</button>
+        <button id="btn-levels" class="btn">Levels</button>
+        <button id="btn-editor" class="btn">Level Editor</button>
+        <label class="toggle">
+          Double Jump
+          <input id="toggle-double" type="checkbox"/>
+        </label>
+      </div>
+    </header>
+
+    <div id="level-select" class="panel hidden">
+      <h2>Select Level</h2>
+      <div id="levels-list"></div>
+      <button id="btn-back-levels" class="btn small">Back</button>
+    </div>
+
+    <div id="editor-panel" class="panel hidden">
+      <h2>Level Editor</h2>
+      <div class="editor-controls">
+        <button id="editor-save" class="btn small">Save</button>
+        <button id="editor-load" class="btn small">Load</button>
+        <button id="editor-clear" class="btn small">Clear</button>
+        <button id="editor-exit" class="btn small">Exit</button>
+      </div>
+      <p>Click grid to place. Right-click to remove. Use types: spike/platform/moving</p>
+    </div>
+
+    <div id="game-wrap">
+      <canvas id="gameCanvas"></canvas>
+
+      <div id="hud" class="hud hidden">
+        <div class="progress"><div id="progress-bar"></div></div>
+        <div class="stats">Attempts: <span id="attempts">0</span></div>
+        <button id="btn-pause" class="btn small">Pause</button>
+      </div>
+
+      <div id="overlay" class="overlay hidden">
+        <div id="overlay-card" class="card">
+          <h2 id="overlay-title">Paused</h2>
+          <div id="overlay-body"></div>
+          <div class="overlay-actions">
+            <button id="overlay-resume" class="btn">Resume</button>
+            <button id="overlay-restart" class="btn">Restart</button>
+            <button id="overlay-menu" class="btn">Menu</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="death-screen" class="overlay hidden">
+        <div class="card">
+          <h2>You Died</h2>
+          <div>Attempts: <span id="death-attempts"></span></div>
+          <div>Best: <span id="best-score"></span></div>
+          <div class="overlay-actions">
+            <button id="restart-now" class="btn">Restart</button>
+            <button id="back-to-menu" class="btn">Menu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="credits">Built with love & minimal patience — tweak levels in <code>script.js</code></footer>
+  </div>
+
+  <!-- Placeholder audio tags - put files in assets/ and name accordingly -->
+  <audio id="music" src="assets/bg_music_level1.mp3" loop></audio>
+  <audio id="sfx-jump" src="assets/jump.wav"></audio>
+  <audio id="sfx-death" src="assets/death.wav"></audio>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
