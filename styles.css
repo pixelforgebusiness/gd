@@ -1,0 +1,37 @@
+:root{
+  --bg:#0b0f1a;
+  --neon:#39f0ff;
+  --accent:#7d39ff;
+  --muted:#9aa4b2;
+  --glass: rgba(255,255,255,0.04);
+  --card: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body,#ui-root{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071023);font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#e6f6ff}
+.menu{display:flex;flex-direction:column;align-items:center;padding:24px}
+#title{font-size:28px;letter-spacing:4px;margin:8px;color:var(--neon);text-shadow:0 0 12px rgba(57,240,255,0.18),0 0 36px rgba(125,57,255,0.08)}
+.menu-buttons{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{background:linear-gradient(135deg,rgba(255,255,255,0.04),var(--glass));border:1px solid rgba(255,255,255,0.06);padding:10px 16px;border-radius:10px;color:var(--neon);cursor:pointer;backdrop-filter:blur(6px);transition:transform .14s,box-shadow .14s}
+.btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+.btn.small{padding:6px 10px;font-size:13px}
+.toggle{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px}
+
+#game-wrap{position:relative;display:flex;justify-content:center;align-items:center;padding:10px}
+canvas{width:100%;height:60vh;max-width:1100px;background:linear-gradient(180deg,#071022,#05101b);border-radius:12px;box-shadow:0 10px 50px rgba(0,0,0,0.6);display:block}
+
+.panel{position:fixed;left:16px;top:90px;background:var(--card);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);width:320px}
+.hidden{display:none}
+.hud{position:absolute;left:18px;top:18px;display:flex;gap:12px;align-items:center}
+.progress{width:320px;height:10px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden}
+#progress-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--neon),var(--accent));box-shadow:0 6px 20px rgba(61,200,255,0.12)}
+.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(2,6,11,0.6),rgba(0,0,0,0.6))}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);width:320px;text-align:center}
+.overlay-actions{display:flex;gap:8px;justify-content:center;margin-top:12px}
+
+.credits{position:fixed;left:16px;bottom:8px;color:var(--muted);font-size:13px}
+
+@media (max-width:700px){
+  canvas{height:54vh}
+  .panel{width:90%;left:5%;top:80px}
+  .progress{width:180px}
+}
